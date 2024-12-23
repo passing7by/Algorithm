@@ -1,7 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
-
+	public static int calculateScore(String testCase) {
+		int sum = 0;
+		
+		for (String s : testCase.split("X")) {
+			int cntO = 0;
+			int sumO = 0;
+			for (char c : s.toCharArray()) {
+				cntO++;
+				sumO += cntO;
+			} //for
+			sum += sumO;
+		} //for
+		
+		return sum;
+	}
+	
 	public static void main(String[] args) {
 		//1. 테스트 케이스의 개수가 주어짐 (테스트 케이스 갯수의 제한은 없는 건지?)
 		//2. 각 테스트 케이스마다 한 행씩 O또는X로 이루어진 문자열이 주어짐 (문자열의 길이 : 1 ~ 79)
@@ -34,17 +49,7 @@ public class Main {
 		for (int i = 0; i < tc; i++) {
 			String str = sc.next();
 			
-			int sum = 0;
-			for (String s : str.split("X")) {
-				int cntO = 0;
-				int sumO = 0;
-				for (char c : s.toCharArray()) {
-					cntO++;
-					sumO += cntO;
-				} //for
-				sum += sumO;
-			} //for
-			System.out.println(sum);
+			System.out.println(calculateScore(str));
 		} //for
 	}
 }
