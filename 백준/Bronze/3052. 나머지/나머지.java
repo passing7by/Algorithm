@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
@@ -35,6 +36,8 @@ public class Main {
 		System.out.println(num);
 		*/
 		
+		//내가 작성한 답안
+		/*
 		//1. & 2.
 		Scanner sc = new Scanner(System.in);
 		
@@ -62,7 +65,20 @@ public class Main {
 		
 		//서로 다른 숫자의 총 갯수 출력
 		System.out.println(num);
+		*/
 		
+		//HashSet를 사용한 답안
+		Scanner sc = new Scanner(System.in);
+		
+		HashSet<Integer> remainders = new HashSet<Integer>(); //중복을 허용하지 않는 자료구조
+		
+		//10개의 입력을 처리하며 나머지를 HashSet에 저장
+		for (int i = 0; i < 10; i++) {
+			remainders.add(sc.nextInt() % 42);
+		}
+		
+		//서로 다른 나머지 값의 개수 출력
+		System.out.println(remainders.size());
 		
 	} //main
 } //Main
